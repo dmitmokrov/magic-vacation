@@ -98,7 +98,6 @@
   line-height: 2rem;
 
   @include fadeIn('.screen.active .swiper-slide-active', 0.2s);
-  @include fadeIn('.screen.active .swiper-slide-next', 0.2s);
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -125,6 +124,10 @@
     min-height: 14rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+  }
+
+  @media (min-width: #{$mobile + 1px}) {
+    @include fadeIn('.screen.active .swiper-slide-next', 0.2s);
   }
 }
 
