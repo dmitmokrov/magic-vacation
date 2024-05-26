@@ -205,6 +205,11 @@
     background-color: $c-dark;
   }
 
+  @media (max-width: $mobile) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   &:hover {
     color: $c-purple;
   }
