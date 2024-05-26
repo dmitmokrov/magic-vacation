@@ -97,6 +97,9 @@
   font-size: 1.8rem;
   line-height: 2rem;
 
+  @include fadeIn('.screen.active .swiper-slide-active', 0.2s);
+  @include fadeIn('.screen.active .swiper-slide-next', 0.2s);
+
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
     max-width: 340px;

@@ -58,3 +58,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin fadeIn($trigger: '.screen.active', $delay: 0s) {
+  opacity: 0;
+  transform: translateY(16px);
+  transition-property: opacity, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: $delay;
+
+  #{$trigger} & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
