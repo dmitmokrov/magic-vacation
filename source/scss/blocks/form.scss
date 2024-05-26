@@ -146,3 +146,15 @@
     }
   }
 }
+
+.form--chat .form__field {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+
+  .screen.active & {
+    transform: scaleX(1);
+  }
+}
