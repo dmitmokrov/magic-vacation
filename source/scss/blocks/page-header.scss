@@ -35,6 +35,28 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-4rem);
+  transition-property: opacity, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.5, 0.87, 0.5, 0.95);
+
+  @media (min-width: $stop-scaling) {
+    transform: translateX(-40px);
+  }
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    transform: translateX(-1rem);
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    transform: translateX(-1rem);
+  }
+
+  .loaded & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -130,6 +152,20 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transform: translateX(4rem);
+  transition-property: opacity, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.5, 0.87, 0.5, 0.95);
+
+  @media (min-width: $stop-scaling) {
+    transform: translateX(40px);
+  }
+
+  // @media (max-width: $mobile) and (orientation: landscape) {
+  //   opacity: 1;
+  //   transform: translateX(1rem);
+  // }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -145,6 +181,7 @@
     background-color: $c-light;
 
     .page-header--menu-opened & {
+      opacity: 1;
       transform: translateX(0);
     }
   }
@@ -165,6 +202,14 @@
     overflow-y: auto;
 
     .page-header--menu-opened & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: #{$mobile + 1px}) {
+    .loaded & {
+      opacity: 1;
       transform: translateX(0);
     }
   }
@@ -275,7 +320,11 @@
     &.active {
       &::after {
         transform-origin: left;
-        transform: scaleX(1);
+        transform: scaleX(0);
+
+        .loaded & {
+          transform: scaleX(1);
+        }
       }
     }
 
